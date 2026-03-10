@@ -734,19 +734,7 @@ function OtpPage({ setScreen, pending }) {
         </p>
       </div>
 
-      {/* Demo helper */}
-      {demoCode && (
-        <div style={{ padding:"10px 14px", background:"var(--p-lt)", border:"1px solid #c7d2fe", borderRadius:8, marginBottom:18, display:"flex", justifyContent:"space-between", alignItems:"center" }}>
-          <div>
-            <div style={{ fontSize:11, color:"var(--p)", fontWeight:700, marginBottom:2 }}>Demo Mode — Your OTP</div>
-            <div style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:20, fontWeight:700, color:"var(--p)", letterSpacing:"0.18em" }}>{demoCode}</div>
-          </div>
-          <button type="button" onClick={() => { setDigits(demoCode.split("")); }}
-            style={{ background:"var(--p)", color:"#fff", border:"none", borderRadius:7, padding:"6px 12px", fontSize:11, fontWeight:700, cursor:"pointer" }}>
-            Auto-fill
-          </button>
-        </div>
-      )}
+      
 
       {/* OTP inputs */}
       <div className={shaking ? "shake" : ""}>
