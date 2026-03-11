@@ -12,6 +12,7 @@ from fastapi.responses import JSONResponse
 
 from config import get_settings
 from database import Base, engine
+from database import get_db
 from routes import (
     admin_routes,
     auth_routes,
@@ -37,6 +38,10 @@ async def lifespan(app: FastAPI):
 # ── App ───────────────────────────────────────────────────────────────────────
 
 app = FastAPI(
+    # Auto-create tables on startup
+    @app.on_event("startup")
+    async def startup():
+    Base.metadata.create_all(bind=engine)
     title="SHIFX PRODUCTS API",
     description="Backend API for the SHIFX ecommerce platform.",
     version="1.0.0",
