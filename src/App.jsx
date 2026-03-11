@@ -156,7 +156,7 @@ const STR_COLOR = ["","var(--danger)","#f59e0b","#6366f1","#10b981"];
 ══════════════════════════════════════════════════════ */
 // API base — empty string uses Vite dev proxy (see vite.config.js)
 // Change to "http://localhost:8000" if running without Vite proxy
-const API = import.meta.env.VITE_API_URL || "";
+const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
 
 async function apiFetch(path, { method = "GET", body, token } = {}) {
   const headers = { "Content-Type": "application/json" };
